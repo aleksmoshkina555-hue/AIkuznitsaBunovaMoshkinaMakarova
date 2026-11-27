@@ -1,0 +1,4 @@
+{"time": "2026-11-27T15:53:42", "to": "petrova@company.ru", "subject": "Re: Шаблон договора", "mode": "demo", "destination": "C:\\Konsultant\\Проект\\data\\outbox\\20261127-155342_petrova_company.ru.eml", "sources": ["CHAT-2026-89", "ORD-2026-118", "MAIL-2026-402"]}
+{"time": "2026-11-27T15:55:17", "to": "morozov@company.ru", "subject": "Re: Сроки согласования", "mode": "demo", "destination": "C:\\Konsultant\\Проект\\data\\outbox\\20261127-155517_morozov_company.ru.eml", "sources": []}
+{"time": "2026-11-27T16:07:54", "to": "kuznetsova@company.ru", "subject": "Ответ на ваш запрос", "mode": "demo", "destination": "C:\\Konsultant\\Проект\\data\\outbox\\20261127-160754_kuznetsova_company.ru.eml", "sources": []}
+{"time": "2026-11-27T16:15:19", "to": "kuznetsova@company.ru", "subject": "Ответ на ваш запрос", "mode": "demo", "destination": "C:\\Konsultant\\Проект\\data\\outbox\\20261127-161519_kuznetsova_company.ru.eml", "sources": []}

@@ -1,0 +1,6 @@
+openai>=1.0
+python-docx>=1.0
+pypdf>=4.0
+pymorphy3>=2.0
+# необязательно: чтение писем Outlook .msg
+# extract-msg>=0.48

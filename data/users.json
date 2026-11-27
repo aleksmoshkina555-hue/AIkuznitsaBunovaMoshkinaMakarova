@@ -1,0 +1,132 @@
+[
+ {
+  "login": "andreev",
+  "name": "Андреев Михаил Петрович",
+  "role": "Пользователь",
+  "active": true,
+  "salt": "c6df213df4057e22895184d778c07d40",
+  "hash": "a6375932b24506794619bda4bb89c2f4a433d8895b6d703b3a9c8527e4e6a07f",
+  "created": "24.11.2026 17:13",
+  "last_login": "24.11.2026 17:13"
+ },
+ {
+  "login": "smirnov",
+  "name": "Смирнов Игорь Олегович",
+  "role": "Пользователь",
+  "active": true,
+  "salt": "c23bf9a8bef31104000ca017f67b782a",
+  "hash": "5897a5da7cf39145f748dfcac904b6e41c070424cd8c55f257da793318dd8f73",
+  "created": "24.11.2026 17:13",
+  "last_login": "24.11.2026 17:13"
+ },
+ {
+  "login": "kuznetsova",
+  "name": "Кузнецова Елена Сергеевна",
+  "role": "Администратор",
+  "active": true,
+  "salt": "74a6c65f6dec5927d8941bfc0b464e74",
+  "hash": "76e5f8402012a95df52f515e79885701e720d5910564de090d5762c964ab043d",
+  "created": "24.11.2026 17:13",
+  "last_login": "24.11.2026 17:13"
+ },
+ {
+  "login": "sokolov",
+  "name": "Соколов Дмитрий Андреевич",
+  "role": "Пользователь",
+  "active": true,
+  "salt": "c0b6abc09c1a7f0b2b287eadb84751f2",
+  "hash": "e56d1be6cfbda624d804c8a2f73f1f92631aabef725b7fe1ac05be51626711cd",
+  "created": "24.11.2026 17:13",
+  "last_login": "24.11.2026 17:13"
+ },
+ {
+  "login": "volkova",
+  "name": "Волкова Марина Николаевна",
+  "role": "Пользователь",
+  "active": true,
+  "salt": "85a7800db23ee4a18ed4548a4bffa5e9",
+  "hash": "7b08c1d3e0cf74e6044443b916cbdee42423b68ead11fb348cb9d212bfdf761f",
+  "created": "24.11.2026 17:13",
+  "last_login": "24.11.2026 17:13"
+ },
+ {
+  "login": "sidorov",
+  "name": "Сидоров Павел Игоревич",
+  "role": "Пользователь",
+  "active": true,
+  "salt": "6d1ccec893b52ecb79e03f29ea86ee5d",
+  "hash": "37649911c1104d15c0b02d0d17e4ec214d80269b3a295f504a8a7f17b747245f",
+  "created": "24.11.2026 17:13",
+  "last_login": "24.11.2026 17:13"
+ },
+ {
+  "login": "orlov",
+  "name": "Орлов Кирилл Викторович",
+  "role": "Пользователь",
+  "active": true,
+  "salt": "5a861902567099061512bef254e45139",
+  "hash": "a3cefb8c165b5ae770cfe53cf1fc7283e28e9e3d1e0ae16e72aeacc0d416ae26",
+  "created": "24.11.2026 17:13",
+  "last_login": "24.11.2026 17:13"
+ },
+ {
+  "login": "ivanov",
+  "name": "Иванов Иван Сергеевич",
+  "role": "Пользователь",
+  "active": true,
+  "salt": "24096cafbb15e86e09bf38e2fd25c738",
+  "hash": "60e5ef2430611b87548455838ced87f12291fdf0dc85dc15450375851436d3bd",
+  "created": "24.11.2026 17:13",
+  "last_login": "24.11.2026 17:13"
+ },
+ {
+  "login": "petrova",
+  "name": "Петрова Анна Владимировна",
+  "role": "Пользователь",
+  "active": true,
+  "salt": "13aa9dd15ed65e852703c5c10cff7c00",
+  "hash": "40d0b9c618de966e06ec362703839f53f7f260812fb01b72580ea6d668669e18",
+  "created": "24.11.2026 17:13",
+  "last_login": "24.11.2026 17:13"
+ },
+ {
+  "login": "kuzmina",
+  "name": "Кузьмина Ольга Александровна",
+  "role": "Пользователь",
+  "active": true,
+  "salt": "904e4cd2d902c684e1b5653671db0089",
+  "hash": "3a7b17c709399ba85501be2f659a8091cb67b7adc1593b3f5a28540fa83790c3",
+  "created": "24.11.2026 17:13",
+  "last_login": "24.11.2026 17:13"
+ },
+ {
+  "login": "lebedeva",
+  "name": "Лебедева Наталья Юрьевна",
+  "role": "Администратор",
+  "active": true,
+  "salt": "6092e815959e400a1a770f16fc19a698",
+  "hash": "28bb02fc2d94f779f09859c192086fab65b6b9e08612c5e55810c19d4e863200",
+  "created": "24.11.2026 17:13",
+  "last_login": "24.11.2026 17:13"
+ },
+ {
+  "login": "belova",
+  "name": "Белова Мария Константиновна",
+  "role": "Пользователь",
+  "active": true,
+  "salt": "d5f08fab5dc966f7ad6637efdbb93cb8",
+  "hash": "732c84e8e2bd1d03610211d418d554494740524baae52a92237432a69cfaee54",
+  "created": "24.11.2026 17:13",
+  "last_login": "24.11.2026 17:13"
+ },
+ {
+  "login": "morozov",
+  "name": "Морозов Денис Алексеевич",
+  "role": "Пользователь",
+  "active": true,
+  "salt": "84aeae951167688e28b822bbc6248d38",
+  "hash": "bd299f219e6f4dad10e02b7fe77c03a4ceb19cdbd0fee8092d5abbf520568276",
+  "created": "24.11.2026 17:13",
+  "last_login": "24.11.2026 17:13"
+ }
+]

@@ -1,0 +1,5 @@
+# Веб-версия: Django (бэкенд и API), Django REST framework, waitress (веб-сервер для Windows)
+-r ../requirements.txt
+django>=5.1
+djangorestframework>=3.15
+waitress>=3.0
