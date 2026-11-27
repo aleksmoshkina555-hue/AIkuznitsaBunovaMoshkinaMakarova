@@ -3,11 +3,17 @@ import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
+_env_file = BASE_DIR / ".env"
+if _env_file.exists():
+    for _line in _env_file.read_text(encoding="utf-8-sig").splitlines():
+        if "=" in _line and not _line.strip().startswith("#"):
+            _k, _v = _line.split("=", 1)
+            os.environ.setdefault(_k.strip(), _v.strip().strip('"').strip("'"))
 
 # Локальная модель (OpenAI-совместимый API Ollama)
-LLM_BASE_URL = os.getenv("LLM_BASE_URL", "http://localhost:11434/v1")
-LLM_API_KEY = os.getenv("LLM_API_KEY", "ollama")
-LLM_MODEL = os.getenv("LLM_MODEL", "qwen2.5:1.5b")
+LLM_BASE_URL = os.getenv("LLM_BASE_URL", "https://proxyapi.ru")
+LLM_API_KEY = os.getenv("LLM_API_KEY", "")
+LLM_MODEL = os.getenv("LLM_MODEL", "gpt-4o-mini")
 # Модель пишет только суть ответа (1–3 предложения), письмо собирает программа — 400 токенов с запасом
 LLM_MAX_TOKENS = int(os.getenv("LLM_MAX_TOKENS", "400"))
 LLM_TIMEOUT_SEC = float(os.getenv("LLM_TIMEOUT_SEC", "120"))
@@ -31,7 +37,7 @@ SEARCH_MIN_COVERAGE = float(os.getenv("SEARCH_MIN_COVERAGE", "0.4"))
 SEARCH_CHUNKS_PER_DOC = int(os.getenv("SEARCH_CHUNKS_PER_DOC", "2"))
 
 # Поиск по смыслу (эмбеддинги через Ollama). «off» (или пусто) — только поиск по словам.
-EMBED_MODEL = os.getenv("EMBED_MODEL", "bge-m3")
+EMBED_MODEL = os.getenv("EMBED_MODEL", "text-embedding-3-small")
 if EMBED_MODEL.strip().lower() in ("off", "none", "0"):
     EMBED_MODEL = ""
 # Вес поиска по смыслу в гибридной оценке (0 — только слова, 1 — только смысл)

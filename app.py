@@ -614,12 +614,17 @@ class CorpAgentApp:
 
     def _ask_error(self, error: Exception):
         self._ask_stop_busy()
-        if isinstance(error, (LLMUnavailableError, LLMModelNotFoundError)):
-            self.ask_status.config(text="Консультант сейчас недоступен — попробуйте позже или напишите специалисту",
-                                   foreground="#dc2626")
-            logger.warning("employee question: model unavailable: %s", error)
-        else:
-            self.ask_status.config(text=f"Ошибка: {type(error).__name__} — подробности в журнале", foreground="#dc2626")
+        if isinstance(error, LLMModelNotFoundError):
+            self.status_text.config(text="Модель не найдена", foreground="#dc2626")
+            messagebox.showerror("Модель не найдена",
+                                 f"Сервер API не нашёл модель {LLM_MODEL}.\n"
+                                 f"Проверьте переменную LLM_MODEL.\n\nДетали: {error}")
+        elif isinstance(error, LLMUnavailableError):
+            self.status_text.config(text="Сервер ИИ недоступен", foreground="#dc2626")
+            messagebox.showerror("Сервер ИИ не отвечает",
+                                 f"Не удалось связаться с API ({LLM_BASE_URL}).\n\n"
+                                 f"1. Проверьте подключение к интернету.\n"
+                                 f"2. Проверьте переменную LLM_API_KEY и баланс.\n\nДетали: {error}")
 
     def _employee_email_hint(self) -> str:
         return "" if extract_email(self.ask_employee.get()) else \

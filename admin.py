@@ -440,25 +440,16 @@ def system_check() -> list[dict]:
             found, ok = "не установлен", False
         rows.append({"item": f"Пакет Python {package}", "required": "pip install -r requirements.txt",
                      "found": found, "ok": ok})
-    try:
-        version = _ollama("/api/version").get("version", "?")
-        models = {m["name"]: m.get("size", 0) for m in _ollama("/api/tags").get("models", [])}
-        rows.append({"item": "Ollama (локальные модели)", "required": "https://ollama.com, запущена",
-                     "found": f"версия {version}", "ok": True})
-    except Exception as exc:  # Ollama не запущена или не установлена
-        models = None
-        rows.append({"item": "Ollama (локальные модели)", "required": "https://ollama.com, запущена",
-                     "found": f"недоступна ({type(exc).__name__})", "ok": False})
-    for model, purpose in ((LLM_MODEL, "ответы"), (EMBED_MODEL, "поиск по смыслу")):
-        if not model or model.lower() == "off":
-            continue
-        if models is None:
-            found, ok = "не проверено (Ollama недоступна)", False
-        else:
-            name = next((n for n in models if n == model or n.split(":")[0] == model.split(":")[0] and ":" not in model), None)
-            found = f"есть, {models[name] / 1e9:.1f} ГБ" if name else "не скачана"
-            ok = name is not None
-        rows.append({"item": f"Модель {model} ({purpose})", "required": f"ollama pull {model}", "found": found, "ok": ok})
+    from config import LLM_API_KEY
+    has_key = bool(LLM_API_KEY and LLM_API_KEY != "ollama")
+    rows.append({"item": "API-ключ языковой модели", "required": "задан в LLM_API_KEY",
+                 "found": "задан" if has_key else "не задан", "ok": has_key})
+    rows.append({"item": f"Модель ответов ({LLM_MODEL})", "required": LLM_BASE_URL,
+                 "found": "настроена", "ok": has_key})
+    if EMBED_MODEL and EMBED_MODEL.lower() != "off":
+        rows.append({"item": f"Модель поиска ({EMBED_MODEL})", "required": LLM_BASE_URL,
+                     "found": "настроена", "ok": has_key})
+
     free = shutil.disk_usage(BASE_DIR).free / 1e9
     rows.append({"item": "Свободное место на диске", "required": "не меньше 10 ГБ (модели и база)",
                  "found": f"{free:.0f} ГБ", "ok": free >= 10})

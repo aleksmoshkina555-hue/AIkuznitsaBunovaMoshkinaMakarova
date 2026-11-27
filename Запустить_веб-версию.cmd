@@ -1,6 +1,29 @@
 @echo off
-rem Веб-версия ИИ-консультанта: сервер на этом компьютере, программа открывается в браузере
+rem я┐╜я┐╜я┐╜-я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜-я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜таня┐╜: я┐╜рвея┐╜ я┐╜я┐╜ я┐╜том я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜, я┐╜рограмя┐╜я┐╜ я┐╜я┐╜я┐╜ывая┐╜я┐╜я┐╜я┐╜ я┐╜ я┐╜я┐╜узея┐╜
 cd /d "%~dp0"
+@echo off
+rem  -тан: роврка тов  Ollama, тем  ход.   сол.
+cd /d "%~dp0"
+
+set LLM_BASE_URL=https://proxyapi.ru
+set LLM_API_KEY=sk-╨▓╨░╤И_╨║╨╗╤О╤З_╤Б_proxyapi
+set LLM_MODEL=gpt-4o-mini
+set EMBED_MODEL=text-embedding-3-small
+
+where pythonw >nul 2>nul
+if %errorlevel%==0 (
+    start "" pythonw launcher.py %*
+    exit /b
+)
+where python >nul 2>nul
+if %errorlevel%==0 (
+    start "" python launcher.py %*
+    exit /b
+)
+echo   Python. тан Python 3.10  : https://www.python.org/downloads/
+echo  тан тме "Add python.exe to PATH", тем   фай сно.
+pause
+
 where pythonw >nul 2>nul
 if %errorlevel%==0 (
     start "" pythonw web\start_web.py
@@ -11,6 +34,6 @@ if %errorlevel%==0 (
     start "" python web\start_web.py
     exit /b
 )
-echo Не найден Python. Установите Python 3.10 или новее: https://www.python.org/downloads/
-echo При установке отметьте "Add python.exe to PATH", затем запустите этот файл снова.
+echo я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜ Python. я┐╜я┐╜таня┐╜я┐╜я┐╜я┐╜ Python 3.10 я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜: https://www.python.org/downloads/
+echo я┐╜я┐╜ я┐╜я┐╜таня┐╜я┐╜я┐╜я┐╜ я┐╜тмея┐╜я┐╜я┐╜ "Add python.exe to PATH", я┐╜я┐╜тем я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜ файя┐╜ сноя┐╜я┐╜.
 pause

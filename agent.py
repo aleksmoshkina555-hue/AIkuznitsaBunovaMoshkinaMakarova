@@ -318,7 +318,7 @@ def _answer_status_question(kb, query: str, active_docs: list, inactive_docs: li
 OTHER_DEPARTMENTS_RATIO = 1.8
 OTHER_DEPARTMENTS_MIN_SIMILARITY = 0.6  # близость по смыслу, с которой документ другого подразделения подсказывается
 # Модели передаются документы с оценкой не ниже этой доли от лучшей
-MODEL_CONTEXT_RATIO = 0.5
+MODEL_CONTEXT_RATIO = 0.3
 
 QUALITY_MIN_COVERAGE = 0.75   # доля слов вопроса, которые есть в вопросе, на который отвечала служба качества
 QUALITY_MIN_SIMILARITY = 0.85  # или близость по смыслу (bge-m3) — тот же вопрос другими словами

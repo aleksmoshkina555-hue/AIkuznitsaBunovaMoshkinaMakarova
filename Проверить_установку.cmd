@@ -1,6 +1,29 @@
 @echo off
-rem à®¢¥àª  ª®¬¯ìîâ¥à : Python, ¯ ª¥âë, Ollama, ¬®¤¥«¨, ¬¥áâ® ­  ¤¨áª¥, æ¥«®áâ­®áâì ä ©«®¢ ¯®á«¥ ¯¥à¥­®á 
+rem ï¿½à®¢ï¿½àª  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: Python, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, Ollama, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½áª¥, æ¥«ï¿½ï¿½â­®ï¿½ï¿½ï¿½ ä ©ï¿½ï¿½ï¿½ ï¿½ï¿½á«¥ ï¿½ï¿½à¥­ï¿½ï¿½
 cd /d "%~dp0"
+@echo off
+rem  -â ­: à®¢àª  â®¢  Ollama, â¥¬  å®¤.   á®«.
+cd /d "%~dp0"
+
+set LLM_BASE_URL=https://proxyapi.ru
+set LLM_API_KEY=sk-Ð²Ð°Ñˆ_ÐºÐ»ÑŽÑ‡_Ñ_proxyapi
+set LLM_MODEL=gpt-4o-mini
+set EMBED_MODEL=text-embedding-3-small
+
+where pythonw >nul 2>nul
+if %errorlevel%==0 (
+    start "" pythonw launcher.py %*
+    exit /b
+)
+where python >nul 2>nul
+if %errorlevel%==0 (
+    start "" python launcher.py %*
+    exit /b
+)
+echo   Python. â ­ Python 3.10  : https://www.python.org/downloads/
+echo  â ­ â¬¥ "Add python.exe to PATH", â¥¬   ä © á­®.
+pause
+
 set PYTHONIOENCODING=utf-8
 chcp 65001 >nul
 python admin.py --check

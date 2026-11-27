@@ -240,24 +240,7 @@ def run(argv: list[str]) -> None:
             root.destroy()
             return
 
-    if not ollama_running():
-        splash, label = _splash("Запускаю локальные модели (Ollama)…")
-        status = start_ollama(on_tick=splash.update)
-        splash.destroy()
-        if status in ("not_installed", "timeout"):
-            root = tk.Tk()
-            root.withdraw()
-            reason = ("Ollama не установлена. Скачайте её с https://ollama.com/download и выполните "
-                      "«ollama pull qwen2.5:1.5b» и «ollama pull bge-m3»." if status == "not_installed" else
-                      "Ollama не ответила за 30 секунд.")
-            go_on = messagebox.askyesno("ИИ-консультант", reason + "\n\nБез неё работают ответы по карте ответственности и "
-                                        "по версиям документов, остальные вопросы будут передаваться специалисту.\n\n"
-                                        "Открыть программу?", parent=root)
-            root.destroy()
-            if not go_on:
-                return
-
-    import app
+        import app
     app.main(argv)
 
 
