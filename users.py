@@ -18,6 +18,10 @@ from pathlib import Path
 
 from config import AUDIT_FILE, USERS_FILE
 from journal import append_jsonl
+import string
+
+PASSWORD_LETTERS = "".join(c for c in string.ascii_letters if c not in "IlOo")
+PASSWORD_DIGITS = "23456789"
 
 ADMIN, USER = "Администратор", "Пользователь"
 ROLES = {
@@ -64,8 +68,6 @@ def password_problems(password: str, login: str = "") -> list[str]:
     return problems
 
 
-PASSWORD_LETTERS = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz"  # без похожих I/l, O/o
-PASSWORD_DIGITS = "23456789"                                            # без 0 и 1
 
 
 def generate_password(length: int = 10) -> str:
