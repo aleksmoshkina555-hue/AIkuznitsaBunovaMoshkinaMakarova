@@ -2,14 +2,13 @@ meta:
   environment: python
   toolchain:
     name: pip
-    version: "3.11"
+    version: 3.11
+
 build:
   requirementsPath: requirements.txt
   useCache: false
+
 run:
-  persistenceMount: /data
   scriptName: main.py
+  persistenceMount: /data
   containerPort: 8000
-  russianTrustedCa: false
-  singleton: true
-  zeroDowntime: false
